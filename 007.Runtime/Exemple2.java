@@ -1,9 +1,10 @@
 import java.util.Scanner;
+import java.io.*; 
 
-import java.io.*; Epublic class Exemple2 {
+public class Exemple2 {
 	public static void main(String[] args) { 
-		Runtime r-Runtime.getRuntime();
-		String comando="1s";
+		Runtime r=Runtime.getRuntime();
+		String comando="ls";
 		Process p=null;
 
 	try{
@@ -26,9 +27,9 @@ import java.io.*; Epublic class Exemple2 {
 
 	try {
 
-		exitVal=p.waitfor();
+		exitVal=p.waitFor();
 		System.out.println("Valor de salida"+exitVal);
 	} catch (InterruptedException e){
 		e.printStackTrace();
 	} //del main
-}//Exemple2
+}}

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Unasalutacio(){
+public class Unasalutacio{
 	public static void main(String[] args){
 		if(args.length<1){
 			System.out.println("Cal una salutacio");

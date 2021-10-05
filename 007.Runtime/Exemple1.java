@@ -1,11 +1,7 @@
-import java.util.Scanner;
-
 public class Exemple1{
 	public static void main(String[] args){
 		Runtime r = Runtime.getRuntime();
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Introduce el comando: ");
-		String comando = sc.nextLine();
+		String comando = "gedit";
 		Process p;
 		
 		try{
