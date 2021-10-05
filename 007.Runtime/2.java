@@ -1,18 +1,34 @@
 import java.util.Scanner;
 
-public class Exemple1{
-	public static void main(String[] args){
-		Runtime r = Runtime.getRuntime();
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Introduce el comando: ");
-		String comando = sc.nextLine();
-		Process p;
-		
-		try{
-			p = r.exec(comando);
-		}catch(Exception e){
-			System.out.println("Error en "+comando);
-			e.printStackTrace();
-		}
+import java.io.*; Epublic class Exemple2 {
+	public static void main(String[] args) { 
+		Runtime r-Runtime.getRuntime();
+		String comando="1s";
+		Process p=null;
+
+	try{
+		p=r.exec(comando);
+		InputStream is=p.getInputStream();
+		BufferedReader br=new BufferedReader (new InputStreamReader(is));
+		String linea;
+
+		while ((linea=br.readLine()) !=null)
+			System.out.println(linea);
+		br.close();
+	} catch (Exception e) { 
+		System.out.println ("Error en"+comando);
+		e.printStackTrace();
 	}
-}
+
+	//comprobació d'error: 0 bé 1 mali
+
+	int exitVal;
+
+	try {
+
+		exitVal=p.waitfor();
+		System.out.println("Valor de salida"+exitVal);
+	} catch (InterruptedException e){
+		e.printStackTrace();
+	} //del main
+}//Exemple2
