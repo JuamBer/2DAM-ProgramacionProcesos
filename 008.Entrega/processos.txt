@@ -1,0 +1,230 @@
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 17:19 ?        00:00:01 /sbin/init splash
+root           2       0  0 17:19 ?        00:00:00 [kthreadd]
+root           3       2  0 17:19 ?        00:00:00 [rcu_gp]
+root           4       2  0 17:19 ?        00:00:00 [rcu_par_gp]
+root           6       2  0 17:19 ?        00:00:00 [kworker/0:0H-events_highpri]
+root           7       2  0 17:19 ?        00:00:00 [kworker/0:1-cgroup_destroy]
+root           9       2  0 17:19 ?        00:00:00 [mm_percpu_wq]
+root          10       2  0 17:19 ?        00:00:00 [rcu_tasks_rude_]
+root          11       2  0 17:19 ?        00:00:00 [rcu_tasks_trace]
+root          12       2  0 17:19 ?        00:00:00 [ksoftirqd/0]
+root          13       2  0 17:19 ?        00:00:01 [rcu_sched]
+root          14       2  0 17:19 ?        00:00:00 [migration/0]
+root          15       2  0 17:19 ?        00:00:00 [idle_inject/0]
+root          16       2  0 17:19 ?        00:00:00 [cpuhp/0]
+root          17       2  0 17:19 ?        00:00:00 [cpuhp/1]
+root          18       2  0 17:19 ?        00:00:00 [idle_inject/1]
+root          19       2  0 17:19 ?        00:00:00 [migration/1]
+root          20       2  0 17:19 ?        00:00:00 [ksoftirqd/1]
+root          22       2  0 17:19 ?        00:00:00 [kworker/1:0H-events_highpri]
+root          23       2  0 17:19 ?        00:00:00 [cpuhp/2]
+root          24       2  0 17:19 ?        00:00:00 [idle_inject/2]
+root          25       2  0 17:19 ?        00:00:00 [migration/2]
+root          26       2  0 17:19 ?        00:00:00 [ksoftirqd/2]
+root          28       2  0 17:19 ?        00:00:00 [kworker/2:0H-events_highpri]
+root          29       2  0 17:19 ?        00:00:00 [kdevtmpfs]
+root          30       2  0 17:19 ?        00:00:00 [netns]
+root          31       2  0 17:19 ?        00:00:00 [inet_frag_wq]
+root          32       2  0 17:19 ?        00:00:00 [kauditd]
+root          34       2  0 17:19 ?        00:00:00 [khungtaskd]
+root          35       2  0 17:19 ?        00:00:00 [oom_reaper]
+root          36       2  0 17:19 ?        00:00:00 [writeback]
+root          37       2  0 17:19 ?        00:00:00 [kcompactd0]
+root          38       2  0 17:19 ?        00:00:00 [ksmd]
+root          39       2  0 17:19 ?        00:00:00 [khugepaged]
+root          86       2  0 17:19 ?        00:00:00 [kintegrityd]
+root          87       2  0 17:19 ?        00:00:00 [kblockd]
+root          88       2  0 17:19 ?        00:00:00 [blkcg_punt_bio]
+root          89       2  0 17:19 ?        00:00:00 [tpm_dev_wq]
+root          90       2  0 17:19 ?        00:00:00 [ata_sff]
+root          91       2  0 17:19 ?        00:00:00 [md]
+root          92       2  0 17:19 ?        00:00:00 [edac-poller]
+root          93       2  0 17:19 ?        00:00:00 [devfreq_wq]
+root          94       2  0 17:19 ?        00:00:00 [watchdogd]
+root          96       2  0 17:19 ?        00:00:00 [kworker/0:1H-kblockd]
+root          98       2  0 17:19 ?        00:00:00 [kswapd0]
+root          99       2  0 17:19 ?        00:00:00 [ecryptfs-kthrea]
+root         101       2  0 17:19 ?        00:00:00 [kthrotld]
+root         102       2  0 17:19 ?        00:00:00 [acpi_thermal_pm]
+root         103       2  0 17:19 ?        00:00:00 [scsi_eh_0]
+root         104       2  0 17:19 ?        00:00:00 [scsi_tmf_0]
+root         105       2  0 17:19 ?        00:00:00 [scsi_eh_1]
+root         106       2  0 17:19 ?        00:00:00 [scsi_tmf_1]
+root         108       2  0 17:19 ?        00:00:00 [vfio-irqfd-clea]
+root         109       2  0 17:19 ?        00:00:00 [ipv6_addrconf]
+root         110       2  0 17:19 ?        00:00:00 [kworker/2:1H-kblockd]
+root         120       2  0 17:19 ?        00:00:00 [kstrp]
+root         123       2  0 17:19 ?        00:00:00 [zswap-shrink]
+root         124       2  0 17:19 ?        00:00:00 [kworker/u7:0]
+root         129       2  0 17:19 ?        00:00:00 [charger_manager]
+root         171       2  0 17:19 ?        00:00:00 [scsi_eh_2]
+root         172       2  0 17:19 ?        00:00:00 [scsi_tmf_2]
+root         175       2  0 17:19 ?        00:00:00 [kworker/1:1H-kblockd]
+root         194       2  0 17:19 ?        00:00:00 [jbd2/sda5-8]
+root         195       2  0 17:19 ?        00:00:00 [ext4-rsv-conver]
+root         239       1  0 17:19 ?        00:00:00 /lib/systemd/systemd-journald
+root         260       1  0 17:19 ?        00:00:00 /lib/systemd/systemd-udevd
+root         261       2  0 17:19 ?        00:00:00 [irq/18-vmwgfx]
+root         262       2  0 17:19 ?        00:00:00 [ttm_swap]
+root         263       2  0 17:19 ?        00:00:00 [card0-crtc0]
+root         264       2  0 17:19 ?        00:00:00 [card0-crtc1]
+root         265       2  0 17:19 ?        00:00:00 [card0-crtc2]
+root         266       2  0 17:19 ?        00:00:00 [card0-crtc3]
+root         267       2  0 17:19 ?        00:00:00 [card0-crtc4]
+root         268       2  0 17:19 ?        00:00:00 [card0-crtc5]
+root         269       2  0 17:19 ?        00:00:00 [card0-crtc6]
+root         270       2  0 17:19 ?        00:00:00 [card0-crtc7]
+root         284       2  0 17:19 ?        00:00:00 [loop0]
+root         285       2  0 17:19 ?        00:00:00 [loop1]
+root         288       2  0 17:19 ?        00:00:00 [loop2]
+root         293       2  0 17:19 ?        00:00:00 [loop3]
+root         294       2  0 17:19 ?        00:00:00 [loop4]
+root         318       2  0 17:19 ?        00:00:00 [kworker/0:3-events]
+root         321       2  0 17:19 ?        00:00:00 [loop5]
+root         322       2  0 17:19 ?        00:00:00 [loop6]
+root         323       2  0 17:19 ?        00:00:00 [loop7]
+root         324       2  0 17:19 ?        00:00:00 [loop8]
+root         325       2  0 17:19 ?        00:00:00 [loop9]
+root         326       2  0 17:19 ?        00:00:00 [loop10]
+root         327       2  0 17:19 ?        00:00:00 [loop11]
+root         346       2  0 17:19 ?        00:00:00 [cryptd]
+systemd+     551       1  0 17:19 ?        00:00:00 /lib/systemd/systemd-resolved
+systemd+     553       1  0 17:19 ?        00:00:00 /lib/systemd/systemd-timesyncd
+root         590       1  0 17:19 ?        00:00:00 /usr/lib/accountsservice/accounts-daemon
+root         591       1  0 17:19 ?        00:00:00 /usr/sbin/acpid
+avahi        593       1  0 17:19 ?        00:00:00 avahi-daemon: running [juamber.local]
+root         594       1  0 17:19 ?        00:00:00 /usr/sbin/cron -f
+root         595       1  0 17:19 ?        00:00:00 /usr/sbin/cupsd -l
+message+     598       1  0 17:19 ?        00:00:01 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         601       1  0 17:19 ?        00:00:02 /usr/sbin/NetworkManager --no-daemon
+root         608       1  0 17:19 ?        00:00:00 /usr/sbin/irqbalance --foreground
+root         610       1  0 17:19 ?        00:00:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root         613       1  0 17:19 ?        00:00:01 /usr/lib/policykit-1/polkitd --no-debug
+syslog       621       1  0 17:19 ?        00:00:00 /usr/sbin/rsyslogd -n -iNONE
+root         626       1  0 17:19 ?        00:00:02 /usr/lib/snapd/snapd
+root         629       1  0 17:19 ?        00:00:00 /usr/libexec/switcheroo-control
+root         631       1  0 17:19 ?        00:00:00 /lib/systemd/systemd-logind
+root         634       1  0 17:19 ?        00:00:00 /usr/lib/udisks2/udisksd
+root         638       1  0 17:19 ?        00:00:00 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+avahi        644     593  0 17:19 ?        00:00:00 avahi-daemon: chroot helper
+root         677       1  0 17:19 ?        00:00:00 /usr/sbin/cups-browsed
+root         687       1  0 17:19 ?        00:00:00 /usr/sbin/ModemManager
+root         694       1  0 17:19 ?        00:00:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+postgres     725       1  0 17:19 ?        00:00:00 /usr/lib/postgresql/12/bin/postgres -D /var/lib/postgresql/12/main -c config_file=/etc/postgresql/12/main/postgresql.conf
+postgres     734     725  0 17:19 ?        00:00:00 postgres: 12/main: checkpointer   
+postgres     735     725  0 17:19 ?        00:00:00 postgres: 12/main: background writer   
+postgres     736     725  0 17:19 ?        00:00:00 postgres: 12/main: walwriter   
+postgres     737     725  0 17:19 ?        00:00:00 postgres: 12/main: autovacuum launcher   
+postgres     738     725  0 17:19 ?        00:00:00 postgres: 12/main: stats collector   
+postgres     739     725  0 17:19 ?        00:00:00 postgres: 12/main: logical replication launcher   
+whoopsie     748       1  0 17:19 ?        00:00:00 /usr/bin/whoopsie -f
+odoo         755       1  0 17:19 ?        00:00:02 python3 /odoo/odoo-server/odoo-bin -c /etc/odoo-server.conf
+kernoops     756       1  0 17:19 ?        00:00:00 /usr/sbin/kerneloops --test
+kernoops     762       1  0 17:19 ?        00:00:00 /usr/sbin/kerneloops
+postgres    1283     725  0 17:19 ?        00:00:00 postgres: 12/main: odoo postgres [local] idle
+postgres    1284     725  0 17:19 ?        00:00:00 postgres: 12/main: odoo postgres [local] idle
+root        9839       1  0 17:20 ?        00:00:00 /usr/sbin/gdm3
+root        9843       1  0 17:20 ?        00:00:00 /usr/sbin/VBoxService --pidfile /var/run/vboxadd-service.sh
+rtkit       9876       1  0 17:20 ?        00:00:00 /usr/libexec/rtkit-daemon
+root        9971       1  0 17:20 ?        00:00:00 /usr/lib/upower/upowerd
+colord     10193       1  0 17:20 ?        00:00:00 /usr/libexec/colord
+root       10254    9839  0 17:21 ?        00:00:00 gdm-session-worker [pam/gdm-password]
+juamber    10267       1  0 17:21 ?        00:00:00 /lib/systemd/systemd --user
+juamber    10268   10267  0 17:21 ?        00:00:00 (sd-pam)
+juamber    10273   10267  0 17:21 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+juamber    10275   10267  0 17:21 ?        00:00:00 /usr/libexec/tracker-miner-fs
+juamber    10277   10267  0 17:21 ?        00:00:01 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+juamber    10282   10267  0 17:21 ?        00:00:00 /usr/libexec/gvfsd
+juamber    10287       1  0 17:21 ?        00:00:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+juamber    10289   10267  0 17:21 ?        00:00:00 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+juamber    10313   10267  0 17:21 ?        00:00:00 /usr/libexec/gvfs-udisks2-volume-monitor
+juamber    10319   10267  0 17:21 ?        00:00:00 /usr/libexec/gvfs-afc-volume-monitor
+juamber    10324   10267  0 17:21 ?        00:00:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+juamber    10328   10267  0 17:21 ?        00:00:00 /usr/libexec/gvfs-goa-volume-monitor
+juamber    10332   10267  0 17:21 ?        00:00:00 /usr/libexec/goa-daemon
+juamber    10334   10254  0 17:21 tty2     00:00:00 /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
+juamber    10336   10334  2 17:21 tty2     00:00:45 /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+juamber    10343   10267  0 17:21 ?        00:00:00 /usr/libexec/goa-identity-service
+juamber    10348   10267  0 17:21 ?        00:00:00 /usr/libexec/gvfs-mtp-volume-monitor
+juamber    10382   10334  0 17:21 tty2     00:00:00 /usr/libexec/gnome-session-binary --systemd --systemd --session=ubuntu
+juamber    10455       1  0 17:21 ?        00:00:00 /usr/bin/VBoxClient --clipboard
+juamber    10456   10455  0 17:21 ?        00:00:00 /usr/bin/VBoxClient --clipboard
+juamber    10467       1  0 17:21 ?        00:00:00 /usr/bin/VBoxClient --seamless
+juamber    10469   10467  0 17:21 ?        00:00:00 /usr/bin/VBoxClient --seamless
+juamber    10474       1  0 17:21 ?        00:00:00 /usr/bin/VBoxClient --draganddrop
+juamber    10476   10474  0 17:21 ?        00:00:05 /usr/bin/VBoxClient --draganddrop
+juamber    10480       1  0 17:21 ?        00:00:00 /usr/bin/VBoxClient --vmsvga
+juamber    10481   10480  0 17:21 ?        00:00:00 /usr/bin/VBoxClient --vmsvga
+juamber    10485   10382  0 17:21 ?        00:00:00 /usr/bin/ssh-agent /usr/bin/im-launch env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
+juamber    10520   10267  0 17:21 ?        00:00:00 /usr/libexec/at-spi-bus-launcher
+juamber    10525   10520  0 17:21 ?        00:00:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+juamber    10551   10267  0 17:21 ?        00:00:00 /usr/libexec/gnome-session-ctl --monitor
+juamber    10558   10267  0 17:21 ?        00:00:00 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+juamber    10573   10267  8 17:21 ?        00:02:52 /usr/bin/gnome-shell
+juamber    10601   10573  0 17:21 ?        00:00:00 ibus-daemon --panel disable --xim
+juamber    10605   10601  0 17:21 ?        00:00:00 /usr/libexec/ibus-memconf
+juamber    10606   10601  0 17:21 ?        00:00:03 /usr/libexec/ibus-extension-gtk3
+juamber    10609   10267  0 17:21 ?        00:00:00 /usr/libexec/ibus-x11 --kill-daemon
+juamber    10612   10267  0 17:21 ?        00:00:00 /usr/libexec/ibus-portal
+juamber    10622   10267  0 17:21 ?        00:00:00 /usr/libexec/at-spi2-registryd --use-gnome-session
+juamber    10626   10267  0 17:21 ?        00:00:00 /usr/libexec/xdg-permission-store
+juamber    10630   10267  0 17:21 ?        00:00:00 /usr/libexec/gnome-shell-calendar-server
+juamber    10637   10267  0 17:21 ?        00:00:00 /usr/libexec/evolution-source-registry
+juamber    10646   10267  0 17:21 ?        00:00:00 /usr/libexec/evolution-calendar-factory
+juamber    10659   10267  0 17:21 ?        00:00:00 /usr/libexec/dconf-service
+juamber    10665   10267  0 17:21 ?        00:00:00 /usr/libexec/evolution-addressbook-factory
+juamber    10679   10267  0 17:21 ?        00:00:00 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+juamber    10689   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-a11y-settings
+juamber    10693   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-color
+juamber    10696   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-datetime
+juamber    10698   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-housekeeping
+juamber    10700   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-keyboard
+juamber    10703   10282  0 17:21 ?        00:00:00 /usr/libexec/gvfsd-trash --spawner :1.3 /org/gtk/gvfs/exec_spaw/0
+juamber    10708   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-media-keys
+juamber    10716   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-power
+juamber    10717   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-print-notifications
+juamber    10718   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-rfkill
+juamber    10719   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-screensaver-proxy
+juamber    10721   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-sharing
+juamber    10723   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-smartcard
+juamber    10727   10558  0 17:21 ?        00:00:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+juamber    10732   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-sound
+juamber    10736   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-usb-protection
+juamber    10741   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-wacom
+juamber    10749   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-wwan
+juamber    10757   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-xsettings
+juamber    10780   10558  0 17:21 ?        00:00:00 /usr/libexec/gsd-disk-utility-notify
+juamber    10819   10267  0 17:21 ?        00:00:00 /usr/libexec/gsd-printer
+juamber    10849   10267  1 17:21 ?        00:00:21 /snap/snap-store/547/usr/bin/snap-store --gapplication-service
+juamber    10889   10601  0 17:21 ?        00:00:00 /usr/libexec/ibus-engine-simple
+juamber    10902   10267  0 17:21 ?        00:00:00 /usr/libexec/xdg-document-portal
+juamber    11009   10267  0 17:22 ?        00:00:00 /usr/libexec/xdg-desktop-portal
+juamber    11013   10267  0 17:22 ?        00:00:00 /usr/libexec/xdg-desktop-portal-gtk
+root       11025       1  0 17:22 ?        00:00:00 /usr/libexec/fwupd/fwupd
+juamber    11962   10267  1 17:22 ?        00:00:25 /snap/code/76/usr/share/code/code --no-sandbox --force-user-env --unity-launch
+juamber    11964   11962  0 17:22 ?        00:00:00 /snap/code/76/usr/share/code/code --type=zygote --no-zygote-sandbox --no-sandbox
+juamber    11965   11962  0 17:22 ?        00:00:00 /snap/code/76/usr/share/code/code --type=zygote --no-sandbox
+juamber    12003   11964  3 17:22 ?        00:00:58 /snap/code/76/usr/share/code/code --type=gpu-process --field-trial-handle=8201380287052146870,2952549307363566213,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-color-correct-rendering --no-sandbox --enable-crash-reporter=a5c3a2be-b8d5-4fab-bd73-5c0dae5342ec,no_channel --global-crash-keys=a5c3a2be-b8d5-4fab-bd73-5c0dae5342ec,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.61.0 --user-data-dir=/home/juamber/.config/Code --gpu-preferences=UAAAAAAAAAAgAAAQAAAAAAAAAAAAAAAAAABgAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --use-gl=swiftshader-webgl --shared-files
+juamber    12007   11962  0 17:22 ?        00:00:01 /snap/code/76/usr/share/code/code --type=utility --utility-sub-type=network.mojom.NetworkService --field-trial-handle=8201380287052146870,2952549307363566213,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --lang=es --service-sandbox-type=none --no-sandbox --enable-crash-reporter=a5c3a2be-b8d5-4fab-bd73-5c0dae5342ec,no_channel --global-crash-keys=a5c3a2be-b8d5-4fab-bd73-5c0dae5342ec,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.61.0 --user-data-dir=/home/juamber/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --shared-files=v8_context_snapshot_data:100
+juamber    12042   11962 13 17:22 ?        00:04:31 /snap/code/76/usr/share/code/code --type=renderer --disable-color-correct-rendering --no-sandbox --field-trial-handle=8201380287052146870,2952549307363566213,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-gpu-compositing --lang=es --enable-crash-reporter=a5c3a2be-b8d5-4fab-bd73-5c0dae5342ec,no_channel --global-crash-keys=a5c3a2be-b8d5-4fab-bd73-5c0dae5342ec,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.61.0 --user-data-dir=/home/juamber/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/snap/code/76/usr/share/code/resources/app --no-sandbox --no-zygote --num-raster-threads=1 --renderer-client-id=6 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100 --vscode-window-config=vscode:d16564fd-8d97-4db3-8dee-e7361d06e04c
+juamber    12081   12042  0 17:22 ?        00:00:13 /snap/code/76/usr/share/code/code --inspect-port=0 /snap/code/76/usr/share/code/resources/app/out/bootstrap-fork --type=extensionHost --skipWorkspaceStorageLock
+juamber    12094   11962  0 17:22 ?        00:00:16 /snap/code/76/usr/share/code/code --type=renderer --disable-color-correct-rendering --no-sandbox --field-trial-handle=8201380287052146870,2952549307363566213,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-gpu-compositing --lang=es --enable-crash-reporter=a5c3a2be-b8d5-4fab-bd73-5c0dae5342ec,no_channel --global-crash-keys=a5c3a2be-b8d5-4fab-bd73-5c0dae5342ec,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.61.0 --user-data-dir=/home/juamber/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/snap/code/76/usr/share/code/resources/app --no-sandbox --no-zygote --disable-blink-features=Auxclick --num-raster-threads=1 --renderer-client-id=8 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100 --vscode-window-config=vscode:c1619156-4812-47c3-969d-549a7e13392a
+juamber    12106   12042  0 17:22 ?        00:00:00 /snap/code/76/usr/share/code/code /snap/code/76/usr/share/code/resources/app/out/bootstrap-fork --type=watcherService
+juamber    12126   12094  0 17:22 ?        00:00:00 /snap/code/76/usr/share/code/code /snap/code/76/usr/share/code/resources/app/out/bootstrap-fork --type=ptyHost
+juamber    12165   12081  0 17:22 ?        00:00:00 /snap/code/76/usr/share/code/code /snap/code/76/usr/share/code/resources/app/extensions/json-language-features/server/dist/node/jsonServerMain --node-ipc --clientProcessId=12081
+juamber    12187   12081  0 17:22 ?        00:00:02 /home/juamber/.vscode/extensions/ms-vscode.cpptools-1.6.0/bin/cpptools
+juamber    12218   10267  0 17:22 ?        00:00:00 /usr/libexec/gvfsd-metadata
+juamber    12221   10558  0 17:22 ?        00:00:00 update-notifier
+juamber    12404   10267  0 17:27 ?        00:00:04 /usr/libexec/gnome-terminal-server
+juamber    12415   12404  0 17:27 pts/0    00:00:00 bash
+root       12708       2  0 17:34 ?        00:00:00 [kworker/1:2-events]
+root       12759       2  0 17:37 ?        00:00:00 [kworker/2:2-events]
+root       13010       2  0 17:43 ?        00:00:00 [kworker/u6:0-flush-8:0]
+root       13050       2  0 17:48 ?        00:00:00 [kworker/u6:2-events_unbound]
+root       13074       2  0 17:49 ?        00:00:00 [kworker/1:0-events]
+root       13075       2  0 17:49 ?        00:00:00 [kworker/2:0-mm_percpu_wq]
+root       13117       2  0 17:50 ?        00:00:00 [kworker/0:0-events]
+root       13323       2  0 17:54 ?        00:00:00 [kworker/1:1-events]
+juamber    13349   12415  0 17:55 pts/0    00:00:00 java u2p1e2tasklistSáezGarcía
+juamber    13366   13349  0 17:55 pts/0    00:00:00 ps -ef
