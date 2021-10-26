@@ -7,7 +7,7 @@ public class mainTICTAC extends Thread {
 			
 			tic.start();
 			
-			tic.sleep(500);
+			tic.sleep(2000);
 			
 			tac.start();
 			
