@@ -1,13 +1,17 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
 
 
-
-public class FilComptador implements Runnable{
+public class FilComptador extends Applet implements Runnable, ActionListener {
 	
 	private long comptador;
 	private boolean parar;
 	private int fil;
 	private String btnv;
 	private Button btn;
+	private Thread thread;
+	private Font font;
 	
 	public FilComptador(long comptador,String btnv,int fil){
 		this.comptador = comptador;
@@ -16,13 +20,15 @@ public class FilComptador implements Runnable{
 		this.btnv = btnv;
 	}
 	
-	public static void pararContador(){
-		
+	public void pararContador(){
+		this.parar = true;
+		this.stop();
 	}
 	
 	public long sumComptador(){
 		return this.comptador++;
 	}
+	
 	public long getComptador(){
 		return this.comptador;
 	}
@@ -36,40 +42,40 @@ public class FilComptador implements Runnable{
 	}
 	
 	public String getBtn(){
-		return this.btn;
+		return this.btnv;
 	}
 	
 	public void init(){
 		setBackground(Color.yellow);
 		
-		add(this.btn = new Button(this.btnv);
-		b1.addActionListener(this);
+		//add(this.btn = new Button(this.btnv);
+		//b1.addActionListener(this);
 		
-		this.fuente = new Font("Verdana", Font.BOLD,26);
-	}
+		this.font = new Font("Verdana", Font.BOLD,26);
+	} 
 	
 	public void start(){
 	}
 	
 	public void run(){
 		Thread filActual=Thread.currentThread();
-		while(this.h==filActual && !this.comp1.getParar()){
+		while((this.thread==filActual) && (this.parar != true)){
 			try{
 				Thread.sleep(1000);
 			}catch(InterruptedException ex){ System.out.println(ex.getMessage()); }
 			
 			repaint();
-			this.comp1.sumComptador();
+			this.sumComptador();
 		}
 	}
 	
 	public void stop(){
-		this.h = null;
+		this.thread = null;
 	}
 	
 	public void paint(Graphics g){
-		g.setFont(this.fuente);
-		g.drawString(Long.toString((long) this.comp1.getComptador()),80,100);
+		g.setFont(this.font);
+		g.drawString(Long.toString((long) this.getComptador()),80,100);
 	}
 	
 	public void actionPerformed(ActionEvent e){
