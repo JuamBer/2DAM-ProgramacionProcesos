@@ -3,7 +3,7 @@ import java.awt.event.*;
 import java.applet.*;
 
 
-public class FilComptador {
+public class FilComptador extends Applet implements Runnable{
 	
 	private long comptador;
 	private boolean parar;
@@ -20,6 +20,7 @@ public class FilComptador {
 	}
 	
 	public void pararContador(){
+		System.out.println("Parar Contador "+this.fil);
 		this.parar = true;
 	}
 	
@@ -43,7 +44,20 @@ public class FilComptador {
 		return this.btn;
 	}
 	
-	
+	public void run(){
+		System.out.println("Metodo Run FilCompatador "+this.fil);
+		Thread filActual=Thread.currentThread(); 
+		 
+		while(true){
+			System.out.println("While Run FilCompatador "+this.fil);
+			try{
+				filActual.sleep(1000);
+			}catch(InterruptedException ex){ 
+				System.out.println(ex.getMessage()); 
+			}
+			sumComptador();
+		}
+	}
 	
 	
 }

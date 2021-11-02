@@ -3,13 +3,14 @@ import java.awt.event.*;
 import java.applet.*;
 
 
-public class DosComptadors extends Applet implements Runnable, ActionListener {
+public class DosComptadors extends Applet implements  ActionListener {
 	
 	private FilComptador comp1;
 	private FilComptador comp2;
 	private Button btn1;
 	private Button btn2;
-	private Thread thread;
+	private Thread f1;
+	private Thread f2;
 	private Font font;
 	
 	public DosComptadors(){
@@ -31,36 +32,19 @@ public class DosComptadors extends Applet implements Runnable, ActionListener {
 	} 
 	
 	public void start(){
-		if(this.thread==null){
-			this.thread = new Thread(this);
-			this.thread.start();
-		}
+			this.f1 = new Thread(this.comp1);
+			this.f2 = new Thread(this.comp2);
+			this.f1.start();
+			this.f2.start();
+	
 	}
 	
-	public void run(){
-		Thread filActual=Thread.currentThread(); //&& (this.parar != true)
-	
-		while((this.thread==filActual) ){
-			try{
-				Thread.sleep(1000);
-			}catch(InterruptedException ex){ System.out.println(ex.getMessage()); }
-			
+	public void pepe(){
+		System.out.println("222");
+		while(true){
+			wa
 			repaint();
-			if(!comp1.getParar()){
-				this.comp1.sumComptador();
-			}else{
-				//this.thread.stop();
-			}
-			if(!comp2.getParar()){
-				this.comp2.sumComptador();
-			}else{
-				//this.thread.stop();
-			}
 		}
-	}
-	
-	public void stop(){
-		this.thread = null;
 	}
 	
 	public void paint(Graphics g){
@@ -74,11 +58,11 @@ public class DosComptadors extends Applet implements Runnable, ActionListener {
 		this.btn2.setLabel(this.comp2.getBtn());
 
 		if(e.getSource()==this.btn1){
-			if(this.thread != null && this.thread.isAlive()){
+			if(this.f1 != null && this.f1.isAlive()){
 				this.comp1.pararContador();
 			}
 		}else if(e.getSource()==this.btn2){
-			if(this.thread != null && this.thread.isAlive()){
+			if(this.f2 != null && this.f2.isAlive()){
 				this.comp2.pararContador();
 			}
 		}
