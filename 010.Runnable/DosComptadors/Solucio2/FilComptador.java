@@ -48,8 +48,8 @@ public class FilComptador extends Applet implements Runnable{
 		System.out.println("Metodo Run FilCompatador "+this.fil);
 		Thread filActual=Thread.currentThread(); 
 		 
-		while(true){
-			System.out.println("While Run FilCompatador "+this.fil);
+		while(!this.parar){
+			System.out.println("CONTADOR: ("+this.fil+")"+this.comptador);
 			try{
 				filActual.sleep(1000);
 			}catch(InterruptedException ex){ 

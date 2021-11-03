@@ -3,7 +3,7 @@ import java.awt.event.*;
 import java.applet.*;
 
 
-public class DosComptadors extends Applet implements  ActionListener {
+public class DosComptadors extends Applet implements ActionListener {
 	
 	private FilComptador comp1;
 	private FilComptador comp2;
@@ -17,6 +17,21 @@ public class DosComptadors extends Applet implements  ActionListener {
 		this.comp1 = new FilComptador(10, "Parar Hilo 1" ,1);
 		this.comp2 = new FilComptador(1000, "Parar Hilo 2",2);
 		System.out.println("DosComptadors creat");
+
+		new Thread(new Runnable() {
+           	public void run() {
+				Thread filActual=Thread.currentThread(); 
+                while(true){
+					try{
+						System.out.println("REPAINT");
+						filActual.sleep(1000);
+					}catch(InterruptedException ex){ 
+						System.out.println(ex.getMessage()); 
+					}
+					repaint();
+				}
+    		}
+		}).start();
 	}
 
 	public void init(){
@@ -36,21 +51,18 @@ public class DosComptadors extends Applet implements  ActionListener {
 			this.f2 = new Thread(this.comp2);
 			this.f1.start();
 			this.f2.start();
-	
+
+			
 	}
 	
-	public void pepe(){
-		System.out.println("222");
-		while(true){
-			wa
-			repaint();
-		}
-	}
+
 	
 	public void paint(Graphics g){
 		g.setFont(this.font);
 		g.drawString(Long.toString((long) this.comp1.getComptador()),80,100);
 		g.drawString(Long.toString((long) this.comp2.getComptador()),80,50);
+
+		
 	}
 	
 	public void actionPerformed(ActionEvent e){
@@ -67,5 +79,7 @@ public class DosComptadors extends Applet implements  ActionListener {
 			}
 		}
 	}
+
+	
 }
 
