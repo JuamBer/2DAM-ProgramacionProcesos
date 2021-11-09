@@ -50,9 +50,7 @@ public class DosComptadors extends Applet implements ActionListener {
 			this.f1 = new Thread(this.comp1);
 			this.f2 = new Thread(this.comp2);
 			this.f1.start();
-			this.f2.start();
-
-			
+			this.f2.start();	
 	}
 	
 
