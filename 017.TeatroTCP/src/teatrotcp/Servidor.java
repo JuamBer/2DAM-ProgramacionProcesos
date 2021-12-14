@@ -1,197 +1,111 @@
 package teatrotcp;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.net.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-
 
 public class Servidor {
 
-    // PORT EN EL QUE ESPERA CONNEXIONS
     private static final int PORT = 5000;
-    private static final int numerosTiposButacas = 6;
-    private static ArrayList<ArrayList> Infobutacas = new ArrayList<ArrayList>();
-    private static ArrayList<ArrayList> butacas;
-    
+
     public static void main(String[] args) {
-        cargarInformacionTeatro();
-        
-        try{
+
+        Teatro teatro = new Teatro("Teatro Olympia", "C. de Sant Vicent Màrtir, 44, 46001 València, Valencia");
+        teatro.addSeccionTeatro("GAL", 150, 8);
+        teatro.addSeccionTeatro("CEN", 80, 54);
+        teatro.addSeccionTeatro("LAT1", 100, 4);
+        teatro.addSeccionTeatro("LAT2", 100, 4);
+        teatro.addSeccionTeatro("VIP1", 250, 3);
+        teatro.addSeccionTeatro("VIP2", 250, 3);
+
+        abrirServidor(teatro);
+    }
+
+    private static void abrirServidor(Teatro teatro) {
+        try {
             ServerSocket ssServidor = new ServerSocket(PORT);
-            System.out.println("Escolte al port "+PORT);
-            
-            while (true) { 
-                boolean key = true;
-                Socket sCliente = ssServidor.accept();
-                OutputStream auxOut = sCliente.getOutputStream();
-                DataOutputStream fluxOut = new DataOutputStream(auxOut);
-                fluxOut.writeUTF("Servidor Escuchando");
-                
-                while(key){
-                    InputStream auxIn = sCliente.getInputStream();
-                    DataInputStream fluxIn = new DataInputStream(auxIn);
-                    String msg = fluxIn.readUTF();
-                    int op = Integer.parseInt(msg);
-                    int butaca;
-                    switch(op){
-                        case 1:  
-                            butaca = reservar(this.butacasGAL);
-                            //enviarMSGCliente(sCliente, auxOut, butaca);
+            System.out.println("---------------------------");
+            System.out.println("SERVIDOR ACTIVO");
+            System.out.println(ssServidor.getLocalSocketAddress());
+            System.out.println("---------------------------");
+
+            boolean key = true;
+            Socket sCliente = ssServidor.accept();
+            OutputStream auxOut = sCliente.getOutputStream();
+            DataOutputStream fluxOut = new DataOutputStream(auxOut);
+
+            while (key) {
+                InputStream auxIn = sCliente.getInputStream();
+                DataInputStream fluxIn = new DataInputStream(auxIn);
+                String msg = fluxIn.readUTF();
+                int op = Integer.parseInt(msg);
+
+                Butaca butaca = null;
+                String msgEnviar = "";
+
+                switch (op) {
+                    case 1:
+                        butaca = reservar(teatro, "GAL");
                         break;
-                        case 2:  
-                            //butaca = reservar(this.butacasCEN);
-                            //enviarMSGCliente(sCliente, auxOut, butaca);
+                    case 2:
+                        butaca = reservar(teatro, "CEN");
                         break;
-                        case 3:  
-                            //butaca = reservar(this.butacasLAT1);
-                            //enviarMSGCliente(sCliente, auxOut, butaca);
+                    case 3:
+                        butaca = reservar(teatro, "LAT1");
                         break;
-                        case 4:  
-                            //butaca = reservar(this.butacasLAT2);
-                            //enviarMSGCliente(sCliente, auxOut, butaca);
+                    case 4:
+                        butaca = reservar(teatro, "LAT2");
                         break;
-                        case 5:  
-                            //butaca = reservar(this.butacasVIP1);
-                            //enviarMSGCliente(sCliente, auxOut, butaca);
+                    case 5:
+                        butaca = reservar(teatro, "VIP1");
                         break;
-                        case 6:  
-                            //butaca = reservar(this.butacasVIP2);
-                            //enviarMSGCliente(sCliente, auxOut, butaca);
+                    case 6:
+                        butaca = reservar(teatro, "VIP2");
                         break;
-                        case 7:  
-                            //String butacas = verButacas();
-                            //enviarButacas(sCliente, auxOut, butacas);
+                    case 7:
+                        msgEnviar = teatro.toString();
                         break;
-                        case 8:  
-                            key = false;
+                    case 8:
+                        key = false;
+                        msgEnviar = "Cerrando conexión";
                         break;
-                    }
-                    
-                    System.out.println("Opción: "+msg);
                 }
-                
-                
-                //ASOCIO UN FLUX DE SALIDA DE DATOS AL SOCKET
-                sCliente.close();
+                System.out.println("Opción: " + msg);
+                if (msgEnviar.equals("")) {
+                    try {
+                        msgEnviar = "Butaca numero " + butaca.getNumero() + " reservada correctamente";
+                    } catch (Exception ex) {
+                        msgEnviar = "No hay ninguna butaca disponible";
+                    }
+                    enviarMensageAlCliente(sCliente, auxOut, msgEnviar);
+                } else {
+                    enviarMensageAlCliente(sCliente, auxOut, msgEnviar);
+                }
             }
-            //ssServidor.close();
-        }catch(Exception ex){
+            sCliente.close();
+
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
-    
-    public Servidor(){
-        
-    }
-    
-    private static void cargarInformacionTeatro(){
-        for (int i = 0; i < numerosTiposButacas; i++) {
-           Infobutacas.add(new ArrayList<>());
-        }
-        Infobutacas.get(0).add("GAL");
-        Infobutacas.get(0).add(150);
-        Infobutacas.get(0).add(8);
-        Infobutacas.get(0).add(Array);
-        
-        Infobutacas.get(1).add("CEN");
-        Infobutacas.get(1).add(80);
-        Infobutacas.get(1).add(54);
-        
-        Infobutacas.get(2).add("LAT1");
-        Infobutacas.get(2).add(100);
-        Infobutacas.get(2).add(4);
-        
-        Infobutacas.get(3).add("LAT2");
-        Infobutacas.get(3).add(100);
-        Infobutacas.get(3).add(4);
-        
-        Infobutacas.get(4).add("VIP1");
-        Infobutacas.get(4).add(250);
-        Infobutacas.get(4).add(3);
-        
-        Infobutacas.get(5).add("VIP2");
-        Infobutacas.get(5).add(250);
-        Infobutacas.get(5).add(3);
-    }
-    
-    private void enviarMSGCliente(Socket sCliente,OutputStream auxOut,int butaca) throws IOException {
+
+    private static void enviarMensageAlCliente(Socket sCliente, OutputStream auxOut, String msg) throws IOException {
         auxOut = sCliente.getOutputStream();
         DataOutputStream fluxOut = new DataOutputStream(auxOut);
-        
-        if(butaca == -1){
-            fluxOut.writeUTF("No se ha podido reservar"+"\n");
-        }else{
-            fluxOut.writeUTF("Se ha reservado la butaca número "+ butaca+"\n");
-        }
+        fluxOut.writeUTF(msg);
     }
-    private void enviarButacas(Socket sCliente,OutputStream auxOut,String butacas) throws IOException {
-        auxOut = sCliente.getOutputStream();
-        DataOutputStream fluxOut = new DataOutputStream(auxOut);
-        fluxOut.writeUTF(butacas);
-    }
-    
-    
-    private int reservar(Boolean[] butacas) {
-        for(int i = 0; i < butacas.length; i++){
-            if(butacas[i] == true){
-                butacas[i] = false;
-                return i;
+
+    private static Butaca reservar(Teatro teatro, String seccionTeatro) {
+        Butaca butaca = null;
+        for (int i = 0; i < teatro.getSeccionesTeatro().size(); i++) {
+            if ((teatro.getSeccionesTeatro().get(i).nombre).equals(seccionTeatro)) {
+                for (int j = 0; j < teatro.getSeccionesTeatro().get(i).getButacas().size(); j++) {
+                    if (teatro.getSeccionesTeatro().get(i).getButacas().get(j).ocupada == false) {
+                        teatro.getSeccionesTeatro().get(i).getButacas().get(j).setOcupada(true);
+                        return teatro.getSeccionesTeatro().get(i).getButacas().get(j);
+                    }
+                }
             }
         }
-        return -1;
+        return butaca;
     }
-
-//    private String verButacas() {
-//        String butacas = "";
-//        
-//        butacas += "\n\n-----BUTACAS GAL-----\n";
-//        for (int i = 0; i < butacasGAL.length; i++) {
-//           butacas += butacasGAL[i]+ ", ";
-//           if((i+1) % 10 == 0){
-//               butacas += "\n";
-//           }
-//        }
-//        butacas += "\n\n-----BUTACAS CEN-----\n";
-//        for (int i = 0; i < butacasCEN.length; i++) {
-//           butacas += butacasCEN[i]+ ", ";
-//           if((i+1) % 10 == 0){
-//               butacas += "\n";
-//           }
-//        }
-//        butacas += "\n\n-----BUTACAS LAT1-----\n";
-//        for (int i = 0; i < butacasLAT1.length; i++) {
-//           butacas += butacasLAT1[i]+ ", ";
-//           if((i+1) % 10 == 0){
-//               butacas += "\n";
-//           }
-//        }
-//        butacas += "\n\n-----BUTACAS LAT2-----\n";
-//        for (int i = 0; i < butacasLAT2.length; i++) {
-//           butacas += butacasLAT2[i]+ ", ";
-//           if((i+1) % 10 == 0){
-//               butacas += "\n";
-//           }
-//        }
-//        butacas += "\n\n-----BUTACAS VIP1-----\n";
-//        for (int i = 0; i < butacasVIP1.length; i++) {
-//           butacas += butacasVIP1[i]+ ", ";
-//           if((i+1) % 10 == 0){
-//               butacas += "\n";
-//           }
-//        }
-//        butacas += "\n\n-----BUTACAS VIP2-----\n";
-//        for (int i = 0; i < butacasVIP2.length; i++) {
-//           butacas += butacasVIP2[i]+ ", ";
-//           if((i+1) % 10 == 0){
-//               butacas += "\n";
-//           }
-//        }
-//        return butacas;
-//    }
-//    
-//    };
-
 }
-
