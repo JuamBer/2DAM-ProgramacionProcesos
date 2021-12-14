@@ -83,7 +83,7 @@ public class Servidor {
             }
             sCliente.close();
 
-        } catch (Exception ex) {
+        } catch (IOException | NumberFormatException ex) {
             System.out.println(ex.getMessage());
         }
     }
