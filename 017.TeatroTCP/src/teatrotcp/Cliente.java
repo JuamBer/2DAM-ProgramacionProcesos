@@ -1,4 +1,4 @@
-package act4;
+package teatrotcp;
 
 import java.io.*;
 import java.net.*;
@@ -26,14 +26,23 @@ public class Cliente {
             while(key){
                 OutputStream auxOut = sCliente.getOutputStream();
                 DataOutputStream fluxOut = new DataOutputStream(auxOut);
-                String msg = sc.nextLine();
-                fluxOut.writeUTF(msg);
+                
+                System.out.println("1. Reservar Butaca GAL"
+                                    +"\n2. Reserver Butaca CEN"
+                                    +"\n3. Reserver Butaca LAT1"
+                                    +"\n4. Reserver Butaca LAT2"
+                                    +"\n5. Reserver Butaca VIP1"
+                                    +"\n6. Reserver Butaca VIP2"
+                                    +"\n7. Ver Butacas"
+                                    +"\n8. Salir");
+                String op = sc.nextLine();
+                fluxOut.writeUTF(op);
                 
                 auxIn = sCliente.getInputStream();
                 fluxIn = new DataInputStream(auxIn);
-                System.out.println("Mensage Servidor: "+fluxIn.readUTF());
+                System.out.println("Mensage Servidor: "+fluxIn.readUTF()+"\n");
                 
-                if(msg.equals("Adios")){
+                if(op.equals("8")){
                     key = false;
                 }
             }
