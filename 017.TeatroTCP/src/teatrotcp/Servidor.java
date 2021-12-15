@@ -97,9 +97,9 @@ public class Servidor {
     private static Butaca reservar(Teatro teatro, String seccionTeatro) {
         Butaca butaca = null;
         for (int i = 0; i < teatro.getSeccionesTeatro().size(); i++) {
-            if ((teatro.getSeccionesTeatro().get(i).nombre).equals(seccionTeatro)) {
+            if ((teatro.getSeccionesTeatro().get(i).getNombre()).equals(seccionTeatro)) {
                 for (int j = 0; j < teatro.getSeccionesTeatro().get(i).getButacas().size(); j++) {
-                    if (teatro.getSeccionesTeatro().get(i).getButacas().get(j).ocupada == false) {
+                    if (teatro.getSeccionesTeatro().get(i).getButacas().get(j).isOcupada() == false) {
                         teatro.getSeccionesTeatro().get(i).getButacas().get(j).setOcupada(true);
                         return teatro.getSeccionesTeatro().get(i).getButacas().get(j);
                     }

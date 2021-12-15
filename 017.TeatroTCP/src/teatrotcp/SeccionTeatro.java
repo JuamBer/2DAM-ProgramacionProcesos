@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class SeccionTeatro {
     
-    String nombre;
-    int precio;
-    ArrayList<Butaca> butacas;
+    private String nombre;
+    private int precio;
+    private ArrayList<Butaca> butacas;
 
 
     public SeccionTeatro(String nombre,int precio, int numeroButacas){

@@ -3,8 +3,8 @@ package teatrotcp;
 import static teatrotcp.Butaca.ANSI_RED;
 
 public class Butaca {
-    int numero;
-    boolean ocupada;
+    private int numero;
+    private boolean ocupada;
     
     
     public static final String ANSI_RED = "\u001B[31m";
