@@ -1,11 +1,14 @@
 package ramonix;
 
-public class Ramonix {
+import java.io.Serializable;
+
+public class Ramonix implements Serializable{
     
     private int vida;
     private SalaReunions salaReunions;
 
     public Ramonix(int vida, SalaReunions salaReunions) {
+        System.out.println("RAMONIX CREADA");
         this.vida = vida;
         this.salaReunions = salaReunions;
     }
