@@ -50,11 +50,7 @@ public class Servidor {
                         fluxOut.writeUTF("Mensage Integigencia artificial");
                     }
                     
-                
-                    
                 }
-                
-                
                 //ASOCIO UN FLUX DE SALIDA DE DATOS AL SOCKET
                 sCliente.close();
             }
