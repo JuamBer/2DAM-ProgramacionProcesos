@@ -23,12 +23,12 @@ public class Ramonix implements Serializable{
         this.vida = vida;
     }
     
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         Ramonix ramonix = new Ramonix(500);
         ramonix.startServer();
     }
     
-    public static void startServer() throws IOException{
+    public static void startServer() throws IOException, InterruptedException{
         server = new ServerSocket(PORT);
         System.out.println("---------------------------");
         System.out.println("SERVIDOR ACTIVO");
@@ -39,6 +39,7 @@ public class Ramonix implements Serializable{
         acceptsHackers(numberOfHackers);
         
         while(vida >= 0){
+            sendStopAtack();
             recieveAtack();
         }
         
@@ -46,6 +47,9 @@ public class Ramonix implements Serializable{
         System.out.println("\n---------------------------");
         System.out.println("RAMONIX DESTRUIDA");
         System.out.println("---------------------------");
+        
+ 
+        
         server.close();
         System.out.println("\n---------------------------");
         System.out.println("SERVIDOR CERRADO");
@@ -64,15 +68,14 @@ public class Ramonix implements Serializable{
         OutputStream auxOut = socket.getOutputStream();
         DataOutputStream fluxOut = new DataOutputStream(auxOut);
         if(vida >= 0){
-            fluxOut.writeUTF("Continue Atacking");
+            fluxOut.writeBoolean(false);
         }else{
-            fluxOut.writeUTF("Stop Atack");
+            fluxOut.writeBoolean(true);
         }
         
     }
     
     public static void recieveAtack() throws IOException {
-        System.out.println("recieveAtack");
         InputStream auxIn = socket.getInputStream();
         DataInputStream fluxIn = new DataInputStream(auxIn);
         int atack =  Integer.parseInt(fluxIn.readUTF());

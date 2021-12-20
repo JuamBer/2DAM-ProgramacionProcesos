@@ -2,7 +2,6 @@
 
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -17,20 +16,7 @@ public class Principal {
     private static final int PORT = 5000;
 
     public static void main(String[] args) throws IOException {
-        /*
-		COSES QUE CAL FER:
-		-Crear la sala de reunions per a esperar que arriben tots
-		-Crear els 4 hackers -fils- (Neo, P4Qu1T0, Pa13T i Ab4$T0$)
-		-Llen�ar els atacs
-         */
-
-        
-
-        //Creem la sala de reunions que es compartida per tots els hackers.
-        //S'ha de fer ac� i passar-la com a par�metre perqu� �s compartida per tots els fils.
-        
-
-        //-Crear els 4 hackers -fils- (Neo, P4Qu1T0, PaU3T i Ab4$T0$)
+     
         for (int i = 0; i < HACKERS.length; i++) {
             String name = (String) HACKERS[i][0];
             int strength = (int) HACKERS[i][1];
@@ -44,7 +30,6 @@ public class Principal {
         
         sendNumberOfHackers();
         
-        //-Llen�ar els fils (i atacs)
         for (int i = 0; i < HACKERS.length; i++) {
             hackerList.get(i).start();
         }

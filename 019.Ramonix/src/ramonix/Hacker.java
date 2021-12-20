@@ -4,7 +4,6 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.ObjectInputStream;
 import java.io.OutputStream;
 import java.io.Serializable;
 import java.net.Socket;
@@ -21,8 +20,6 @@ class Hacker implements Runnable, Serializable {
     private MeetingRoom meetingRoom;
 
     private static Socket socket;
-    private static InputStream auxIn;
-    private static OutputStream auxOut;
     private static String HOST = "localhost";
     private static final int PORT = 5000;
 
@@ -142,28 +139,30 @@ class Hacker implements Runnable, Serializable {
         Thread filActual = Thread.currentThread();
 
         while (attacking) {
-            
-            filActual.sleep(this.cadence * 1000);
-            OutputStream auxOut = socket.getOutputStream();
-            DataOutputStream fluxOut = new DataOutputStream(auxOut);
-            int outputData;
-            if (side) {
-                outputData = this.strength * (-1);
-            } else {
-                outputData = this.strength;
-            }
-            System.out.println(name + " ATACANDO (" + outputData + ")");
-            fluxOut.writeUTF(String.valueOf(outputData));
-
+            if(recieveStopAtack()){
+                attacking=false;
+            }else{
+                filActual.sleep(this.cadence * 1000);
+                OutputStream auxOut = socket.getOutputStream();
+                DataOutputStream fluxOut = new DataOutputStream(auxOut);
+                int outputData;
+                if (side) {
+                    outputData = this.strength * (-1);
+                } else {
+                    outputData = this.strength;
+                }
+                System.out.println(name + " ATACANDO (" + outputData + ")");
+                fluxOut.writeUTF(String.valueOf(outputData));
+            }    
         }
 
     }
 
-    public void recieveStopAtack() throws IOException {
+    public boolean recieveStopAtack() throws IOException {
         InputStream auxIn = socket.getInputStream();
         DataInputStream fluxIn = new DataInputStream(auxIn);
-        String msg = fluxIn.readUTF();
-        System.out.println(msg);
+        boolean val = fluxIn.readBoolean();
+        return val;
     }
 
     @Override
