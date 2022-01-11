@@ -27,7 +27,12 @@ public class Servidor {
 
 			Coche coche = (Coche) inStream.readObject();
 			System.out.println("Objecto Recibido: " + coche);
-
+                        
+			File file = new File("Vechiculo.txt");
+			FileOutputStream foStream = new FileOutputStream(file);
+			ObjectOutputStream oStream = new ObjectOutputStream(foStream);
+			oStream.writeObject(coche);
+                        
 			inStream.close();
 			socket.close();
 

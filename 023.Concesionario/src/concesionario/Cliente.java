@@ -1,19 +1,18 @@
-
+package concesionario;
 
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
 
-public class Client {
+public class Cliente {
 
 	private Socket socket = null;
 	private ObjectOutputStream outputStream = null;
 	private boolean estaConnectat = false;
         private Scanner sc = new Scanner(System.in);
         
-	public Client() {
-	}
-
+        public Cliente(){}
+        
 	public void comunicar() {
 		while (!estaConnectat) {
 			try {
@@ -56,7 +55,7 @@ public class Client {
 	}
 
 	public static void main(String[] args) {
-		Client client = new Client();
+		Cliente client = new Cliente();
 		client.comunicar();
 	}
 }
