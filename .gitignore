@@ -10,3 +10,5 @@ nbdist/
 
 #DataBases Engines
 /Engines/
+/024.ServidorMultihilo/target/
+/025.QuizMagic/target/
