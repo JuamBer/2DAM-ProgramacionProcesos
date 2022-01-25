@@ -43,7 +43,7 @@ public class Cliente {
                                 outputStream.flush();
 				outputStream.writeObject(coche);
 				System.out.println("Objecto Enviado");
-
+                                
 				outputStream.close();
 				socket.close();
 			} catch (SocketException se) {
