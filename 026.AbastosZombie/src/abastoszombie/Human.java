@@ -13,7 +13,7 @@ public class Human {
     public Human(String name, Integer strength, Map<String, Boolean> vaccinatedVirus) {
         this.name = name;
         this.strength = generateStrength();
-        this.vaccinatedVirus = generateVaccinatedVirus();
+        this.vaccinatedVirus = generateVaccinatedVirus(generateVirus());
     }
     
     private static int generateRandomNumber(int max){
@@ -23,8 +23,22 @@ public class Human {
     private static Integer generateStrength(){
         return null;
     }
-    private static Map<String, Boolean> generateVaccinatedVirus(){
+    private static Map<String, Boolean> generateVirus(){
         ArrayList<String> totalVirus = new ArrayList<String>(Arrays.asList("Coronavirus Delta", "Coronavirus Omicron", "Virus Ebola", "Virus de Marburg"));
+        Map<String, Boolean> virus = null;
+        
+        for (int i = 0; i < totalVirus.size(); i++) {
+            virus.put(totalVirus.get(i),false);
+        }
+        return virus;
+    }
+    
+    private static Map<String, Boolean> generateVaccinatedVirus(Map<String, Boolean> virus){
+        final int numberOfVaccinatedVirus = 3;
+       
+        for (int i = 0; i < numberOfVaccinatedVirus;i++) {
+            int number = generateRandomNumber(virus.size());
+        }
         
         return null;
     }
