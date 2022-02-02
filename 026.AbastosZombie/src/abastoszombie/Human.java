@@ -11,12 +11,14 @@ public class Human {
 
     private String name;
     private Integer strength;
+    private Integer strengthToBeZombie;
     private HashSet<Integer> vaccinatedVirus;
     private static ServerSocket server;
             
     public Human(String name) {
         this.name = name;
         this.strength = generateStrength();
+        this.strengthToBeZombie = (int) (this.strength * 0.1);
         this.vaccinatedVirus = generatevVaccinatedVirus();
     }
 
@@ -70,7 +72,6 @@ public class Human {
     }
     
     private void checkIfIamZombie() {
-        Integer strengthToBeZombie = (int) (this.strength * 0.1);
         if(strength < strengthToBeZombie){
             System.out.println("I AM A ZOMBIE: (strengthToBeZombie:"+strengthToBeZombie+"; myActualStrength:"+strength+")\n");
         }else{
@@ -103,11 +104,14 @@ public class Human {
         DataBaseViruses db = DataBaseViruses.getDataBaseViruses();
         ArrayList<Virus> totalViruses = db.getViruses();
         
-        int number = generateRandomNumber(0, virus.size() - 1);
-        
-        if (virus.contains(totalViruses.get(number))) {
+        int number = generateRandomNumber(0, totalViruses.size() - 1);
+        System.out.println("generateRandomNumber: "+number);
+        System.out.println("totalViruses.get(number)"+totalViruses.get(number));
+        if (virus.contains(totalViruses.get(number).getId())) {
+            System.out.println("IS CONTAINED");
             generateRandomImmunity(virus);
         } else {
+            System.out.println("not is: totalViruses.get(number).getId(): "+totalViruses.get(number).getId());
             virus.add(totalViruses.get(number).getId());
         }
     }

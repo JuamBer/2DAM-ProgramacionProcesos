@@ -21,10 +21,13 @@ public class VirusAttack extends Thread {
 
             Virus virus = (Virus) inputStream.readObject();
             if (human.checkVirusImmunity(virus)) {
-                System.out.println(virus.getName() + " (ID:" + virus.getId() + ") IS TRYING TO ATTACK ME. BUT IM VACCINATED. (LIVE:" + human.getStrength() + ")");
+                System.out.println(virus.getName() + " (ID:" + virus.getId() + ") IS TRYING TO ATTACK ME. BUT IM VACCINATED. ");
             } else {
-                System.out.println(virus.getName() + " (ID:" + virus.getId() + ") IS ATTACKING ME, AND HITS ME " + virus.getAttackStrength() + ". (LIVE:" + (human.getStrength() - virus.getAttackStrength()) + ")");
+                System.out.println(virus.getName() + " (ID:" + virus.getId() + ") IS ATTACKING ME, AND HITS ME " + virus.getAttackStrength() + ".");
                 this.human.receiveAttack(virus.getAttackStrength());
+                if(this.human.getStrength() <= 0){
+                    //Implements the code
+                }
             }
 
         } catch (IOException | ClassNotFoundException ex) {
