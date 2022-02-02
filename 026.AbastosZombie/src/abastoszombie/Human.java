@@ -105,13 +105,9 @@ public class Human {
         ArrayList<Virus> totalViruses = db.getViruses();
         
         int number = generateRandomNumber(0, totalViruses.size() - 1);
-        System.out.println("generateRandomNumber: "+number);
-        System.out.println("totalViruses.get(number)"+totalViruses.get(number));
         if (virus.contains(totalViruses.get(number).getId())) {
-            System.out.println("IS CONTAINED");
             generateRandomImmunity(virus);
         } else {
-            System.out.println("not is: totalViruses.get(number).getId(): "+totalViruses.get(number).getId());
             virus.add(totalViruses.get(number).getId());
         }
     }
