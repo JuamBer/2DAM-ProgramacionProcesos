@@ -28,7 +28,7 @@ public class DataBaseViruses {
         return db;
     }
     
-    public static ArrayList<Virus> getViruses() {
+    public ArrayList<Virus> getViruses() {
         return viruses;
     }
     

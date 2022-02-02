@@ -1,12 +1,9 @@
 package abastoszombie;
 
-import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Client {
@@ -19,7 +16,7 @@ public class Client {
         
         DataBaseViruses db = DataBaseViruses.getDataBaseViruses();
         ArrayList<Virus> viruses = db.getViruses();
-        ArrayList<Virus> virusesToAttack = new ArrayList<Virus>();
+        ArrayList<Virus> virusesToAttack = new ArrayList<>();
         
         for (int i = 0; i < viruses.size(); i++) {
             Scanner sc = new Scanner(System.in);
