@@ -43,11 +43,14 @@ public class Human {
         System.out.println("---------------------------\n");
         
         for (int i = 0; i < numberOfAttacks; i++) {
-            socketClient = new Socket();
-            socketClient = server.accept();
-            VirusAttack virusAttack = new VirusAttack(this, socketClient);
-            virusAttack.start();
+            try{
+                socketClient = new Socket();
+                socketClient = server.accept();
+                VirusAttack virusAttack = new VirusAttack(this, socketClient);
+                virusAttack.start();
+            }catch(Exception ex){
             
+            }
         }
         
         try {
@@ -60,15 +63,22 @@ public class Human {
         System.out.println("FINISH GETTING ATTACKED");
         System.out.println("---------------------------\n");
         
-        System.out.println("FINAL ESTATUS: "+this+"\n");
-       
-        checkIfIamZombie();
+        closeServer();
         
-        System.out.println("---------------------------");
-        System.out.println("SERVER OFF (Human)");
-        System.out.println(server.getLocalSocketAddress());
-        System.out.println("---------------------------");
-        this.server.close();
+    }
+    public void closeServer() throws IOException{
+        if(!Human.server.isClosed()){
+            System.out.println("FINAL ESTATUS: "+this+"\n");
+
+            checkIfIamZombie();
+
+            System.out.println("---------------------------");
+            System.out.println("SERVER OFF (Human)");
+            System.out.println(server.getLocalSocketAddress());
+            System.out.println("---------------------------");
+            this.server.close();
+        }
+        
     }
     
     private void checkIfIamZombie() {

@@ -25,8 +25,9 @@ public class VirusAttack extends Thread {
             } else {
                 System.out.println(virus.getName() + " (ID:" + virus.getId() + ") IS ATTACKING ME, AND HITS ME " + virus.getAttackStrength() + ".");
                 this.human.receiveAttack(virus.getAttackStrength());
+                
                 if(this.human.getStrength() <= 0){
-                    //Implements the code
+                    //this.human.closeServer();
                 }
             }
 
